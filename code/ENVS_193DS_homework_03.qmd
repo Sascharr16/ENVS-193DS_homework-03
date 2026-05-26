@@ -17,4 +17,6 @@ library(flextable) # creating tables
 
 # create kelp object with data
 kelp <- read_csv(here("data", "temp-kelp.csv"))
+# create bike_commute data with personal data
+bike_commute <- read_xlsx(here("data", "ENVS_193DS_Personal_Data_Project.xlsx"))
 ```
