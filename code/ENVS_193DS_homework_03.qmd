@@ -8,6 +8,7 @@ format: pdf
 
 ```{r}
 #| label: libraries-and-data
+#| message: false
 
 library(tidyverse) # general use
 library(janitor) # cleaning data frames
@@ -60,7 +61,7 @@ ggplot(data = kelp,
 #### Linearity
 
 ```{r}
-#| label: kelp_visualization
+#| label: kelp_linearity
 
 # base layer: ggplot
 # using kelp data frame
@@ -88,8 +89,8 @@ ggplot(data = kelp,
 
 kelp_model <- lm(
   kelp_elong ~ temp_c, # formula: change in kelp length as a function of temp
-  data = kelp      # data: kelp data
-)
+  data = kelp)      # data: kelp data
+
 ```
 
 #### Diagnostics
