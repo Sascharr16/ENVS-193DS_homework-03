@@ -20,3 +20,17 @@ kelp <- read_csv(here("data", "temp-kelp.csv"))
 # create bike_commute data with personal data
 bike_commute <- read_xlsx(here("data", "ENVS_193DS_Personal_Data_Project.xlsx"))
 ```
+
+
+# 2. Problems
+
+## Problem 1. Giant kelp fronds
+
+### a. An appropriate test
+
+Because we are interested in the strength of the relationship between temperature and giant kelp
+frond elongation rate, the appropriate test is a Pearson’s r or a Spearman rank correlation. These tests both test for correlation between two variables and see haw the variables move together, not necessarily predict each other. Pearson’s r test is a parametric test that can be used for continuous and normally distributed variables. Spearman rank correlation is a non-parametric test, which can be used for interval, ordinal, or nominal data.
+
+### b. 
+
+
