@@ -29,7 +29,7 @@ bike_commute <- read_xlsx(here("data", "ENVS_193DS_Personal_Data_Project.xlsx"))
 ### a. An appropriate test
 
 Because we are interested in the strength of the relationship between temperature and giant kelp
-frond elongation rate, the appropriate test is a Pearson’s r or a Spearman rank correlation. These tests both test for correlation between two variables and see haw the variables move together, not necessarily predict each other. Pearson’s r test is a parametric test that can be used for continuous and normally distributed variables. Spearman rank correlation is a non-parametric test, which can be used for interval, ordinal, or nominal data.
+frond elongation rate, the appropriate test is a Pearson’s r or a Spearman rank correlation. These tests both test for correlation between two variables and see haw the variables move together, not necessarily predict each other. Pearson’s r test is a parametric test that can be used for linear relationships that have continuous and normally distributed variables. Spearman rank correlation is a non-parametric test, which can be used for monotonic relationships that have interval, ordinal, or nominal data.
 
 ### b. Create a visualization
 
@@ -55,4 +55,69 @@ ggplot(data = kelp,
 
 ```
 
-### c. 
+### c. Check your assumptions and run your test
+
+#### Linearity
+
+```{r}
+#| label: kelp_visualization
+
+# base layer: ggplot
+# using kelp data frame
+ggplot(data = kelp, 
+       mapping = aes(
+          x = temp_c, # x- axis: Ocean temperature (degrees C)
+          y = kelp_elong)) + # y axis: kelp elongation rate (cm/day)
+  # first layer: points
+  geom_point(
+      #changing color from default
+      color = "darkcyan") + 
+  # relabeling x- and y- axes
+  labs(
+      x = "Ocean Temperature (°C)", #
+      y = "Kelp Frond Elongation Rate (cm/day)") +
+  # changing theme from default
+  theme_bw()
+
+```
+
+#### Model fitting
+
+```{r}
+#| label: kelp-model
+
+kelp_model <- lm(
+  kelp_elong ~ temp_c, # formula: change in kelp length as a function of temp
+  data = kelp      # data: kelp data
+)
+```
+
+#### Diagnostics
+
+```{r}
+#| label: kelp_diagnostics
+
+par(mfrow = c(2, 2))   # displays plots in a 2 by 2 grid
+plot(kelp_model)    # displays diagnostic plots for model
+
+```
+
+The data is linear and continuous meaning a pearsons r test should be used. In the diagnostic plots, the Q-Q Residuals plot shows that the residuals are normally distributed. The Residuals vs Fitted and Scale-Location plots show that the residuals are evenly distributed with no clear patterns. And finally, the Residuals vs Leverage plot shows that their are no outliers in the data that may have a large influence on the models. 
+
+#### Running test
+```{r}
+#| label: kelp_test
+
+# running correlation test
+# variables ocean temperature and giant kelp elongation rate
+cor.test(kelp$temp_c, kelp$kelp_elong, 
+    # running pearson's r based on assumptions
+    method = "pearson") 
+
+```
+ 
+
+
+
+
+
