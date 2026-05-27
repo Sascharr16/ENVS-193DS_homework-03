@@ -1,6 +1,7 @@
 ---
 title: "Homework 3"
 author: "Sascha Roberts"
+date: "2026-05-28
 format: pdf
 ---
 
@@ -127,6 +128,95 @@ To evaluate the strength of the relationship between ocean temperature and giant
 
 Our results revealed a strong to moderate negative relationship between ocean temperature and Giant Kelp Elongation rate. This means that at higher ocean temperatures, Giant Kelp frond elongation rate is lower and therefore, to maximize Giant Kelp growth, ocean water temperature should be at a natural low. As average ocean temperature rises due to climate change, we will most likely see a decrease in Giant Kelp Elongation rate.
 
+### f. Double check your own work.
+
+```{r}
+#| label: spearmans_test
+
+# running correlation test
+# variables ocean temperature and giant kelp elongation rate
+cor.test(kelp$temp_c, kelp$kelp_elong, 
+    # Spearman's rank test
+    method = "spearman") 
+
+```
+
+The results from the Spearman's rank test illustrate that I would have made the same conclusions that I did with the Pearson's test. The Spearman's rank test also gave a p-value < 0.001 and gave a correlation coefficient that is -0.69. 
+
+
+## Problem 2. Personal Data
+
+### a. Updating your visualizations
+
+```{r}
+#| label: categorical_visualization
+
+# base layer: ggplot
+# data frame: bike_commute
+ggplot (data = bike_commute,
+        mapping = aes(
+          # x-axis: time of day
+          # y-axis: duration of commute
+          x = time_of_day,
+          y = `duration_(m)`,
+          # color data by time of day
+          color = time_of_day
+        )) + 
+  # first layer: boxplot
+   geom_boxplot() +
+  # Changed title, x and y-axis
+  labs (title = "Classtime Bike Commute",
+        x = "Time of Day",
+        y = "Duration of Commute (minutes)",
+        subtitle = "2026-05-28") + 
+  # changed the color of data to custom
+  scale_color_manual(
+    values = c(
+      "afternoon" = "brown2",
+      "morning" = "deepskyblue4"
+    )) + 
+  # applied custom plot theme
+  theme_bw() + 
+  # removing the panel background
+  theme(panel.background = element_blank()) +
+  # removing the panel grid
+  theme(panel.grid = element_blank()) +
+  # removing axis ticks
+  theme(axis.ticks = element_blank()) +
+  # removed legend
+  theme(legend.position = "none")
+
+```
+
+```{r}
+#| label: continuous_visualization
+
+# base layer: ggplot
+# data frame: bike_commute
+ggplot (data = bike_commute,
+        mapping = aes(
+          # x-axis: amount of time before class
+          # y-axis: duration of commute
+          x = `time_before_class_(min)`,
+          y = `duration_(m)`
+        )) + 
+  # first layer: point = scatterplot
+  # make data points colored
+  geom_point(color = "blue3") + 
+  # Changed title, x and y-axis
+  labs (title = "Urgency of Classtime Bike Commute",
+        x = "Amount of Time Before Class",
+        y = "Duration of Commute (minutes)",
+        subtitle = "2026-05-28") + 
+  # applied custom plot theme
+  theme_bw() + 
+  # removing the panel background
+  theme(panel.background = element_blank()) +
+  # removing the panel grid
+  theme(panel.grid = element_blank()) +
+  # removing axis ticks
+  theme(axis.ticks = element_blank())
+```
 
 
 
