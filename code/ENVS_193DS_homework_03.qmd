@@ -219,4 +219,14 @@ ggplot (data = bike_commute,
 ```
 
 
+### b. Captions
+
+**Figure 1. Morning bike commute duration on average have a shorter commute time than afternoon bike commute duration.** Red box plot represents observations of afternoon bike commute duration in minutes and blue box plot represents observations of morning bike commute duration in minutes. The center line displays the median of observations with box and whiskers representing upper and lower quartiles. Data is from ENVS 193DS personal data collection project. 
+
+**Figure 2. Commuting to class with less time before it starts, correlates to a shorter duration of commute time.** Points represent individual observations with "Amount of Time Before Class" on the x-axis and "Duration of Commute (minutes) on the y-axis. Data is from ENVS 193DS personal data collection project. 
+
+## Problem 3. Affective visualization
+
+
+
 
