@@ -3,6 +3,7 @@ title: "Homework 3"
 author: "Sascha Roberts"
 date: "2026-05-28"
 format: pdf
+toc: true # use this to display a table of contents
 ---
 
 # 1. Set up
