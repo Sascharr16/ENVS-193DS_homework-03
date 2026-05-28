@@ -234,8 +234,8 @@ I think that my personal data showing duration of bike commute as it relates to 
 
 ### b.Create a sketch (on paper) of your idea.
 
-
 ![](images/affective_sketch.png)
 
-
 ### c. Make a draft of your visualization.
+
+![](images/affective_vis_draft.png)
