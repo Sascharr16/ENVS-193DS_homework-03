@@ -8,6 +8,8 @@ toc: true # use this to display a table of contents
 
 # 1. Set up
 
+## load packages and data
+
 ```{r}
 #| label: libraries-and-data
 #| message: false
