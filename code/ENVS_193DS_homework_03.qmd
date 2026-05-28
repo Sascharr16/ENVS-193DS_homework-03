@@ -23,15 +23,13 @@ kelp <- read_csv(here("data", "temp-kelp.csv"))
 bike_commute <- read_xlsx(here("data", "ENVS_193DS_Personal_Data_Project.xlsx"))
 ```
 
-
 # 2. Problems
 
 ## Problem 1. Giant kelp fronds
 
 ### a. An appropriate test
 
-Because we are interested in the strength of the relationship between temperature and giant kelp
-frond elongation rate, the appropriate test is a Pearson’s r or a Spearman rank correlation. These tests both test for correlation between two variables and see haw the variables move together, not necessarily predict each other. Pearson’s r test is a parametric test that can be used for linear relationships that have continuous and normally distributed variables. Spearman rank correlation is a non-parametric test, which can be used for monotonic relationships that have interval, ordinal, or nominal data.
+Because we are interested in the strength of the relationship between temperature and giant kelp frond elongation rate, the appropriate test is a Pearson’s r or a Spearman rank correlation. These tests both test for correlation between two variables and see haw the variables move together, not necessarily predict each other. Pearson’s r test is a parametric test that can be used for linear relationships that have continuous and normally distributed variables. Spearman rank correlation is a non-parametric test, which can be used for monotonic relationships that have interval, ordinal, or nominal data.
 
 ### b. Create a visualization
 
@@ -104,9 +102,10 @@ plot(kelp_model)    # displays diagnostic plots for model
 
 ```
 
-The data is linear and continuous meaning a pearsons r test should be used. In the diagnostic plots, the Q-Q Residuals plot shows that the residuals are normally distributed. The Residuals vs Fitted and Scale-Location plots show that the residuals are evenly distributed with no clear patterns. And finally, the Residuals vs Leverage plot shows that their are no outliers in the data that may have a large influence on the models. 
+The data is linear and continuous meaning a pearsons r test should be used. In the diagnostic plots, the Q-Q Residuals plot shows that the residuals are normally distributed. The Residuals vs Fitted and Scale-Location plots show that the residuals are evenly distributed with no clear patterns. And finally, the Residuals vs Leverage plot shows that their are no outliers in the data that may have a large influence on the models.
 
 #### Running test
+
 ```{r}
 #| label: kelp_test
 
@@ -117,12 +116,12 @@ cor.test(kelp$temp_c, kelp$kelp_elong,
     method = "pearson") 
 
 ```
- 
+
 ### d. Results communication
 
 To evaluate the strength of the relationship between temperature and giant kelp frond elongation rate, I used a
 
-To evaluate the strength of the relationship between ocean temperature and giant kelp (Macrocystis pyrifera) frond elongation rate, I used a Pearson’s r correlation test. The test revealed a moderate to strong negative (Pearson’s r = -0.69) relationship between ocean temperature and kelp elongation rate(cm/day) (t(30) = -5.19, p < 0.001,  $\alpha$ = 0.05).
+To evaluate the strength of the relationship between ocean temperature and giant kelp (Macrocystis pyrifera) frond elongation rate, I used a Pearson’s r correlation test. The test revealed a moderate to strong negative (Pearson’s r = -0.69) relationship between ocean temperature and kelp elongation rate(cm/day) (t(30) = -5.19, p \< 0.001, $\alpha$ = 0.05).
 
 ### e. Test implications
 
@@ -141,8 +140,7 @@ cor.test(kelp$temp_c, kelp$kelp_elong,
 
 ```
 
-The results from the Spearman's rank test illustrate that I would have made the same conclusions that I did with the Pearson's test. The Spearman's rank test also gave a p-value < 0.001 and gave a correlation coefficient that is -0.69. 
-
+The results from the Spearman's rank test illustrate that I would have made the same conclusions that I did with the Pearson's test. The Spearman's rank test also gave a p-value \< 0.001 and gave a correlation coefficient that is -0.69.
 
 ## Problem 2. Personal Data
 
@@ -222,25 +220,22 @@ ggplot (data = bike_commute,
   theme(axis.ticks = element_blank())
 ```
 
-
 ### b. Captions
 
-**Figure 1. Morning bike commute duration on average have a shorter commute time than afternoon bike commute duration.** Red box plot represents observations of afternoon bike commute duration in minutes and blue box plot represents observations of morning bike commute duration in minutes. The center line displays the median of observations with box and whiskers representing upper and lower quartiles. Data is from ENVS 193DS personal data collection project. 
+**Figure 1. Morning bike commute duration on average have a shorter commute time than afternoon bike commute duration.** Red box plot represents observations of afternoon bike commute duration in minutes and blue box plot represents observations of morning bike commute duration in minutes. The center line displays the median of observations with box and whiskers representing upper and lower quartiles. Data is from ENVS 193DS personal data collection project.
 
-**Figure 2. Commuting to class with less time before it starts, correlates to a shorter duration of commute time.** Points represent individual observations with "Amount of Time Before Class" on the x-axis and "Duration of Commute (minutes)" on the y-axis. Data is from ENVS 193DS personal data collection project. 
+**Figure 2. Commuting to class with less time before it starts, correlates to a shorter duration of commute time.** Points represent individual observations with "Amount of Time Before Class" on the x-axis and "Duration of Commute (minutes)" on the y-axis. Data is from ENVS 193DS personal data collection project.
 
 ## Problem 3. Affective visualization
 
 ### a. Describe in words what an affective visualization could look like for your personal data
 
-I think that my personal data showing duration of bike commute as it relates to the amount of time I leave home before class shows an interesting relationship that may be linear. 
+I think that my personal data showing duration of bike commute as it relates to the amount of time I leave home before class shows an interesting linear relationship. I think this is an important relationship to visulaize and could be done in a creative way for my affective visualization to effectively explain the data. I could use the shape of the linear line to make a bikepath running through campus with individual points as specific objects (little bikers or trees).
+
+### b.Create a sketch (on paper) of your idea.
 
 
+![](images/affective_sketch.png)
 
 
-
-
-
-
-
-
+### c. Make a draft of your visualization.
