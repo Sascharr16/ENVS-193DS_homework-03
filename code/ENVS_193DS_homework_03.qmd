@@ -1,7 +1,7 @@
 ---
 title: "Homework 3"
 author: "Sascha Roberts"
-date: "2026-05-28
+date: "2026-05-28"
 format: pdf
 ---
 
@@ -20,7 +20,8 @@ library(flextable) # creating tables
 # create kelp object with data
 kelp <- read_csv(here("data", "temp-kelp.csv"))
 # create bike_commute data with personal data
-bike_commute <- read_xlsx(here("data", "ENVS_193DS_Personal_Data_Project.xlsx"))
+bike_commute <- read_xlsx(here
+                          ("data","ENVS_193DS_Personal_Data_Project.xlsx"))
 ```
 
 # 2. Problems
@@ -242,23 +243,22 @@ I think that my personal data showing duration of bike commute as it relates to 
 
 ### d. Write an artist statement.
 
-- the content of your piece (what are you showing?)
+-   the content of your piece (what are you showing?)
 
-  The visualization reflects data of a linear relationship of bike commute relationship compared to amount of time available before class starts.
-  
-- the influences (what did techniques/artists/etc. did you find influential in creating your work?)
+    The visualization reflects data of a linear relationship of bike commute relationship compared to amount of time available before class starts.
 
-  The piece is influenced by the bike culture at UCSB and the necessity to efficiency bike to class. 
-  
-- the form of your work (watercolor, oil painting, crocheted object, etc.)
+-   the influences (what did techniques/artists/etc. did you find influential in creating your work?)
 
-  This piece is digital artwork.
+    The piece is influenced by the bike culture at UCSB and the necessity to efficiency bike to class.
 
-- your process (how did you create your work?)
-  
-  This piece was made on Canva using the platforms digital artwork resources.
-  
-  
+-   the form of your work (watercolor, oil painting, crocheted object, etc.)
+
+    This piece is digital artwork.
+
+-   your process (how did you create your work?)
+
+    This piece was made on Canva using the platforms digital artwork resources.
+
 ### e. Prep your materials to share in class.
 
 Link to Slides presentation [here](https://docs.google.com/presentation/d/10m2OesM1CXSxppbksCVVvh9F_eOfTo9sNpxBvMgm1SY/edit?slide=id.g3e53fba22e5_0_85#slide=id.g3e53fba22e5_0_85)
@@ -267,8 +267,23 @@ Link to Slides presentation [here](https://docs.google.com/presentation/d/10m2Oe
 
 ### a. Revisit and summarize
 
+This research paper uses a Kruskal-Wallace test. The response variable of this test is biocrust characteristics and related measurements such as biocrust cover, biomass, and chlorophyll content. The predictor variable is the treatment area the data was collected from, such as, under solar panels or open/exposed areas as well as what type of inoculum treatment was added to the soil to stimulate biocrust.
 
-  
-  
-  
-  
+![](images/homework-02_figure_from_research.png)
+
+### b. Visual clarity
+
+The above visualization includes 4 sepearte plots with clear x and y-axis. The y-axis shows the categorical data and the x-axis of each plot represents a different response variable. Underlying data is shown as well as summary statistics from boxplots (medians upper and lower quartiles).
+
+### c. Aesthetic clarity
+
+In my opinion the data:ink ratio is creating a little bit of visual clutter. Displaying 4 graphs with box and whisker plots all with 6 categorical variables creates clutter. The plots could have been separated/organized to be more concise.
+
+### d. Recommendations
+
+The plots could have been separated/organized to be more concise into related representations instead of including all 4 plots in one figure. Also if the data allows it, a simple mean and standard error could represent the data with less clutter.
+
+
+
+
+
